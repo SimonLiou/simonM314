@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v3
+      - name: Clean VM
+        run: npm cache clean --force
       - name: Run installation of dependencies command
         run: npm install
 
@@ -28,6 +30,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Run installation of dependencies command
         run: npm install
+      - name: Install jest
+        run: npm install jest
       - name: Run unit testing command
         run: npm run test
 
